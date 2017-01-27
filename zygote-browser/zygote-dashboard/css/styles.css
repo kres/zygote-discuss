@@ -1,0 +1,134 @@
+#heading {
+    margin-left: 50px;
+}
+
+.container-main {
+    width: 1250px;
+    height: auto;
+    margin: auto;
+}
+
+.navbar .container {
+    margin-right: 25px;
+}
+
+.panel {
+    float: left;
+    margin-left: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 0px;
+}
+
+.panel-heading {
+    height: 60px;
+    vertical-align: middle;
+    line-height: 60px;
+}
+.panel-btn {
+    float : right;
+}
+.panel-name {
+    width: 100px;
+    height: 100%;
+    margin: 0px;
+    float: left;
+    vertical-align: middle;
+    line-height: 40px;
+    padding-left: 5px;
+}
+
+.widget-toolbar {
+    height: 45px;
+    vertical-align: middle;
+    line-height: 45px;
+    padding-left: 20px;
+}
+
+.widget-btn {
+    float: right;
+}
+
+.widget-name {
+    width: 100px;
+    height: 100%;
+    float: left;
+    margin: 0px;
+    vertical-align: middle;
+    line-height: 25px;
+}
+
+.toggle-button .panel-body {
+    height: 75px;
+    margin: 5px;
+    padding: 0px;
+    vertical-align: middle;
+    line-height: 75px;
+    text-align: center;
+}
+
+.gauge .panel-body {
+    padding: 0px;
+    overflow: visible;
+    color: #FEFEFE;
+}
+
+.sparkline .panel-body {
+    padding: 0px;
+    height : 230px;
+    color: #FEFEFE;
+}
+
+.color-picker .panel-body {
+    padding : 0px;  
+}
+
+.slider-container {
+    padding-top: 10px;
+    padding-left: 10px;
+    width : 450px;
+    height 230px;
+    float: left;
+}
+
+.r, .g, .b {
+    width : 400px;
+    margin-top: 50px;
+    background-image: none;
+    background-color: #FEFEFE;
+    border : 0px;
+}
+
+.r .ui-slider-range{
+    background: #EC4E4A;
+    border: none;
+}
+
+.g .ui-slider-range{
+    background: #77CB77;
+    border: none;
+}
+
+.b .ui-slider-range{
+    background: #73C9E2;
+    border: none;
+}
+
+.r .ui-slider-handle, .g .ui-slider-handle, .b .ui-slider-handle {
+    background-image: none;
+    background-color: #70787D;
+    border: none;
+}
+
+.preview-container {
+    width : 140px;
+    height : 230px;
+    float: right;
+}
+
+.preview {
+    width:125px;
+    height: 125px;
+    background-color: rgb(127,127,127);
+    margin-top: 65px;
+}

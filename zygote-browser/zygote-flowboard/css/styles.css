@@ -1,0 +1,159 @@
+body {
+    padding-top: 60px;
+}
+
+
+#palette-sidebar {
+    width: 210px;
+    height: 700px;
+    float: left;
+}
+
+#palette {
+    width: 210px;
+    height: 663px;
+    overflow-y: scroll;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+}
+
+#palette-toolbar {
+    width: 210px;
+    margin-bottom: -2px;
+    border: 0px;
+}
+
+#sidebar {
+    width: 300px;
+    height: 720px;
+    overflow-y: scroll;
+    float: right;
+    margin-right: 10px;
+}
+
+#workspace {
+    overflow: hidden;
+}
+
+#workspace-container {
+    position: relative;
+    height: 720px;
+    overflow: scroll;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+#chart {
+    position: relative;
+    z-index: 100;
+    background-color: #FFFFFF;
+    width: 1500px;
+    height: 1500px;
+    margin: 10px;
+}
+#navs {
+    padding-right: 110px;
+}
+
+.start {
+    width: 100px;
+    height: 35px;
+    border: 1px solid black;
+    border-radius: 25px;
+    vertical-align: middle;
+    line-height: 35px;
+    background: -moz-linear-gradient(#77cb77, #54be54); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#77cb77, #54be54);
+    
+}
+
+.stop {
+    width: 100px;
+    height: 35px;
+    border: 1px solid black;
+    border-radius: 25px;
+    vertical-align: middle;
+    line-height: 35px;
+    background: -moz-linear-gradient(#f17475, #ec4e4a); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#f17475, #ec4e4a);
+}
+
+.init, .end {
+    width: 20px;
+    height: 20px;
+    border: 1px solid black;
+    border-radius: 20px;
+    background-color: #FEFEFE;
+    margin-left: 10px;
+    margin-top: 7px;
+    float: left;
+}
+
+.function {
+    width: 150px;
+    height: 50px;
+    border: 1px solid black;
+    border-radius: 15px;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 50px;
+    background: -moz-linear-gradient(#faa022, #e58906); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#faa022, #e58906);
+    color: #FEFEFE;
+}
+
+.resource, .dashboard-resource {
+    width: 150px;
+    height: 50px;
+    border: 1px solid black;
+    border-radius: 15px;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 50px;
+    z-index: 5;
+    background: -moz-linear-gradient(#73c9e2, #4bbadb); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#73c9e2, #4bbadb);
+    color: #FEFEFE;
+}
+
+.panel-default {
+    margin-bottom: 10px;
+}
+
+.block .panel-heading {
+    color: #EFEFEF;
+    border-radius: 5px;
+}
+
+.res-type {
+    margin-bottom: 0px;
+    border-radius: 0px;
+}
+
+.res-type .panel-heading {
+    color: #EFEFEF;
+    border-radius: 0px;
+}
+
+
+.panel-body {
+    padding: 0px;
+}
+
+ul.list-group {
+    margin: 0px;
+}
+
+.window {
+    z-index: 20;
+}
+
+._jsPlumb_connector {
+    z-index: 1;
+}
+._jsPlumb_endpoint {
+    z-index: 0;
+}
+
+
+

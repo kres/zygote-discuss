@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset='utf-8' />
+        
+        <link type="text/css" rel="stylesheet" href="css/jquery-ui.min.css" />
+        <link type="text/css" rel="stylesheet" href="css/jquery-ui.structure.min.css" />
+        <link type="text/css" rel="stylesheet" href="css/jquery-ui.theme.min.css" />
+        <link type="text/css" rel="stylesheet" href="fonts/font-awesome/css/font-awesome.min.css" />
+        <link type="text/css" rel="stylesheet" href="css/wheelmenu.css" />
+        <link type="text/css" rel="stylesheet" href="css/slate.bootstrap.min.css" />
+        <link type="text/css" rel="stylesheet" href="css/styles.css" />
+
+        <script type="text/javascript" src="lib/jquery.min.js"></script>
+        <script type="text/javascript" src="lib/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="lib/bootstrap.min.js"></script>
+        <script type="text/javascript" src="lib/jquery.jsPlumb.min.js"></script>
+        <script type="text/javascript" src="lib/jquery.wheelmenu.min.js"></script>
+        
+        <script type="text/javascript" src="js/functions.js"></script>
+        <script type="text/javascript" src="js/save-load-json.js"></script>
+        <script type="text/javascript" src="js/script-gen.js"></script>
+        <script type="text/javascript" src="js/init.js"></script>
+        
+        <title>Zygote Flowboard</title>
+        
+    </head>
+    
+    <body>
+        <div id="container-main">
+        
+            <div id="header" class="navbar navbar-default navbar-fixed-top">
+                <div class="container">
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="#">Zygote Flowboard</a>
+                    </div>
+                    
+                    <div>
+                        <ul id="navs" class="nav navbar-nav navbar-right ">
+                            <button id="refreshButton" type="button" class="btn btn-danger navbar-btn">
+                                <span class="glyphicon glyphicon-refresh" aria-hidden="true"></span> Refresh
+                            </button>
+                            <button id="clearButton" type="button" class="btn btn-warning navbar-btn">
+                                <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Clear
+                            </button>
+                            <button id="importButton" type="button" class="btn btn-success navbar-btn">
+                                <span class="glyphicon glyphicon-import" aria-hidden="true"></span> Import
+                            </button>
+                            <button id="exportButton" type="button" class="btn btn-info navbar-btn">
+                                <span class="glyphicon glyphicon-export" aria-hidden="true"></span> Export
+                            </button>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="palette-sidebar"> 
+                <div id="palette-toolbar" class="panel panel-default">
+                    <div  class="panel-heading">
+                        <button id="addButton" type="button" class="btn btn-primary btn-block">
+                            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                        </button>
+                    </div>
+                </div>
+                <div id="palette">
+                    <div class="panel panel-primary">
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                <div class="node start"><div class="init"></div></div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="node stop"><div class="end"></div></div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="node function">Function</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div id="resource-dialog" title="Add a Resource">
+                    <form id="resource-form">
+                        <fieldset>
+                            <label for="name">Name</label>
+                            <input type="text" name="name" id="name" class="text ui-widget-content ui-corner-all" />
+                            <br />
+                            <label for="container-select">Container</label>
+                            <select name="container-select" id="container-select">
+                            </select>
+                            <br />
+                            <label for="type-select">Type</label>
+                            <select name="type-select" id="type-select">
+                            </select>
+                            <br />
+                            <label for="pin-select">Pins</label>
+                            <select name="pin-select" id="pin-select">
+                            </select>
+                            <br>
+                            <input type="checkbox" name="custom-pin" id="custom-pin"/>
+                            <label for="custom-pin-value">Custom Pin:</label>
+                            <input type="text" name="custom-pin-value" id="custom-pin-value" class="text ui-widget-content ui-corner-all" />              
+                            <br />
+                            <input type="submit" tabindex="-1" style="position:absolute; top:-1000px">
+                        </fieldset>
+                    </form>
+                </div>
+                
+                <div id="function-dialog" title="Edit the Function">
+                    <form id="function-form">
+                        <fieldset>
+                            <label for="fname">Name</label>
+                            <input type="text" name="fname" id="fname" class="text ui-widget-content ui-corner-all" />
+                            <br />
+                            <label for="fendpoints">Endpoints</label>
+                            <input type="number" name="fendpoints" id="fendpoints" class="number ui-widget-content ui-corner-all" min="1" max="4" />
+                            <br />
+                            <textarea name="fdef" id= "fdef" form="function-form" rows="10" cols="50"></textarea>
+                            <br />
+                            <input type="submit" tabindex="-1" style="position:absolute; top:-1000px">
+                        </fieldset>
+                    </form>
+                </div>
+                
+                <div id="trigger-dialog" title="Set the flow trigger.">
+                    <form id="trigger-form">
+                        <fieldset>
+                            <label for="flowname">Name</label>
+                            <input type="text" name="flowname" id="flowname" class="text ui-widget-content ui-corner-all" />
+                            <br />
+                            <label for="trigger-type">Type</label>
+                            <select name="trigger-type" id="trigger-type">
+                                <option value="timer">Timer</option>
+                                <option value="event">Event</option>
+                                <option value="dashboard-event">Dashboard Event</option>
+                            </select>
+                        </fieldset>
+                    </form>
+                </div>
+                
+            </div>
+            <div id="sidebar">
+                <ul id="tabs" class="nav nav-tabs nav-justified">
+                    <li class="active"><a href="#element-info" data-toggle="tab">Element</a></li>
+                    <li><a href="#json-flow" data-toggle="tab">JSON</a></li>
+                </ul>
+                
+                <div id="sidebar-tab-content" class="tab-content">
+                    <div class="tab-pane active" id="element-info">
+                        <p>This is where information about the selected element will be displayed.</p>
+                    </div>
+                    <div class="tab-pane" id="json-flow">
+                        <p>This is where the JSON data that is generated by the flow will be displayed.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="workspace">
+                <div id="workspace-container">
+                    <div id="chart">
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        
+            
+        </div>
+    </body>
+</html>
